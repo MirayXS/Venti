@@ -41,7 +41,11 @@ while Holder == true and wait(1) do
                     if Player.Name == Players.LocalPlayer.Name then
                         --Pass
                     else
-                        table.insert(Targets, Player.Name)
+                        if Player.Team == TeamName then
+                            --Double Check
+                        else
+                            table.insert(Targets, Player.Name)
+                        end
                     end
                 end
             end
@@ -64,14 +68,22 @@ while Holder == true and wait(1) do
                 
                 local EspBOX = Instance.new("BoxHandleAdornment", PChar[BodyPart])
                 EspBOX.Adornee = PChar[BodyPart]
-                EspBOX.AlwaysOnTop = truesawdw
+                EspBOX.AlwaysOnTop = true
                 EspBOX.ZIndex = 2
                 EspBOX.Name = "discord.gg/Kenta"
                 
                 if Player.Team == TeamName then
-                    EspBOX.Color3 = _G.Settings["Team Color"]
+                    if _G.Settings["Team ESP"] == true then
+                        EspBOX.Color3 = _G.Settings["Team Color"]
+                    else
+                        EspBOX:Destroy()
+                    end
                 else
-                    EspBOX.Color3 = _G.Settings["Enemy Color"]
+                    if _G.Settings["Enemy ESP"] == true then
+                        EspBOX.Color3 = _G.Settings["Enemy Color"]
+                    else
+                        EspBOX:Destroy()
+                    end
                 end
             else
                 print("Venti [Couldn't Find "..BodyPart.." in "..Player.Name.."]")
