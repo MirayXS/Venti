@@ -10,7 +10,7 @@
 print("Venti [Loading...]")
 
 _G.Settings = {
-    ["Team ESP"] = false,
+    ["Team ESP"] = true,
     ["Other ESP"] = true,
     ["Team Color"] = Color3.fromRGB(75, 93, 172),
     ["Other Color"] = Color3.fromRGB(172, 77, 78)
