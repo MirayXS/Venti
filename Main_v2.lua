@@ -63,7 +63,7 @@ spawn(function()
                 end
                 
                 if _G.Settings["Other ESP"] and _G.Settings["Team ESP"] == false then
-                    print("Venti [You disabled all esp]")
+                    return(false)
                 end
             end)
         end
