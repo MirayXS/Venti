@@ -19,7 +19,10 @@ _G.Settings = {
 local BodyParts = {
     "Head",
     "LowerTorso",
-    "UpperTorso"
+    "UpperTorso",
+    "Torso",
+    "Left Leg",
+    "Right Leg"
 }
 
 local Targets = {}
